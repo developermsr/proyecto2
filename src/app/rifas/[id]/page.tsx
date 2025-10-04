@@ -49,10 +49,6 @@ export default function RaffleDetailPage({ params }: { params: Promise<{ id: str
   const [ticketCount, setTicketCount] = useState(1)
   const [error, setError] = useState('')
 
-  useEffect(() => {
-    fetchData()
-  }, [id, fetchData])
-
   const fetchData = useCallback(async () => {
     try {
       const token = localStorage.getItem('token')
@@ -83,7 +79,10 @@ export default function RaffleDetailPage({ params }: { params: Promise<{ id: str
     }
   }, [id])
 
-  
+  useEffect(() => {
+    fetchData()
+  }, [id, fetchData])
+
   const getProgressPercentage = (sold: number, max: number) => {
     return (sold / max) * 100
   }
