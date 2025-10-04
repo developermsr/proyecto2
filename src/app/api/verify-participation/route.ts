@@ -12,7 +12,24 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    let participations: any[] = []
+    let participations: Array<{
+      id: string;
+      ticketNumber: number;
+      raffle: {
+        title: string;
+        description: string;
+        prize: string;
+        isActive: boolean;
+        endDate: Date;
+      };
+      purchase: {
+        paymentStatus: string;
+        amount: number;
+        createdAt: Date;
+      };
+      createdAt: Date;
+      isWinner: boolean;
+    }> = []
 
     if (dni) {
       const user = await prisma.user.findFirst({

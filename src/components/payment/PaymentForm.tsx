@@ -48,7 +48,7 @@ export default function PaymentForm({ amount, raffleId, onSuccess, onError }: Pa
       } else {
         onError(data.error || 'Error al procesar el pago')
       }
-    } catch (error) {
+    } catch {
       onError('Error de conexión')
     } finally {
       setIsSubmitting(false)

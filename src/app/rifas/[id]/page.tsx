@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { useRouter } from 'next/navigation'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
@@ -53,9 +53,9 @@ export default function RaffleDetailPage({ params }: { params: Promise<{ id: str
 
   useEffect(() => {
     fetchData()
-  }, [id])
+  }, [id, fetchData])
 
-  const fetchData = async () => {
+  const fetchData = useCallback(async () => {
     try {
       const token = localStorage.getItem('token')
 
@@ -83,45 +83,9 @@ export default function RaffleDetailPage({ params }: { params: Promise<{ id: str
     } finally {
       setIsLoading(false)
     }
-  }
+  }, [id])
 
-  const handlePurchase = async (paymentData: any) => {
-    try {
-      const token = localStorage.getItem('token')
-      if (!token) {
-        router.push('/login')
-        return
-      }
-
-      const response = await fetch('/api/purchases/create', {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${token}`,
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          raffleId: id,
-          amount: ticketCount * (raffle?.price || 0),
-          ticketCount,
-          ...paymentData
-        })
-      })
-
-      if (response.ok) {
-        const data = await response.json()
-        alert(`Compra registrada exitosamente! Tu número de ticket es: ${data.purchase.ticketNumber}`)
-        setShowPaymentForm(false)
-        fetchData()
-      } else {
-        const errorData = await response.json()
-        alert(errorData.error || 'Error al procesar la compra')
-      }
-    } catch (error) {
-      console.error('Error processing purchase:', error)
-      alert('Error de conexión')
-    }
-  }
-
+  
   const getProgressPercentage = (sold: number, max: number) => {
     return (sold / max) * 100
   }

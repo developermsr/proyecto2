@@ -95,7 +95,7 @@ export default function Terminos() {
                   No es necesario estar presente en la transmisión para ganar.
                 </p>
                 <p>
-                  <strong>5.3 Sistema de tickets:</strong> Cada ticket es una opción en "La lista de Participantes".
+                  <strong>5.3 Sistema de tickets:</strong> Cada ticket es una opción en &quot;La lista de Participantes&quot;.
                   Si compras múltiples tickets, se añadirán múltiples veces a la lista. Los tickets ganadores son eliminados
                   de la lista para premios futuros, pero los tickets no ganadores continúan participando.
                 </p>
@@ -199,7 +199,7 @@ export default function Terminos() {
                 </p>
                 <p>
                   <strong>9.4 Publicación de ganadores:</strong> La lista oficial de ganadores se publicará en la sección
-                  "GANADORES" de la web y en todas las redes sociales oficiales.
+                  &quot;GANADORES&quot; de la web y en todas las redes sociales oficiales.
                 </p>
               </div>
             </section>

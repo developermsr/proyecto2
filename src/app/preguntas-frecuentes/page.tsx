@@ -62,7 +62,7 @@ export default function PreguntasFrecuentes() {
                 Sobre el Ticket
               </h2>
               <p className="text-gray-600 leading-relaxed">
-                Cada ticket es una opción añadida a "La lista de Participantes" (una fila en excell).
+                Cada ticket es una opción añadida a &quot;La lista de Participantes&quot; (una fila en excell).
                 El ticket ganador será eliminado de la lista. Ejemplo: Si compras 3 rifas se te
                 añadirá 3 veces a la lista, y si uno de ellos es el ganador, éste será eliminado
                 de la lista, pero las otros dos tickets seguirán participando por los demás premios restantes.
@@ -77,7 +77,7 @@ export default function PreguntasFrecuentes() {
                 Si eres ganador de uno de nuestros premios nos pondremos en contacto contigo en el
                 Plazo máximo de 72 horas. Es necesario llenar y firmar el documento que te enviaremos
                 para otorgarte tu premio. Además, la lista de Ganadores se publicará en esta misma
-                web en la opción "GANADORES" y en todas nuestras redes sociales.
+                web en la opción &quot;GANADORES&quot; y en todas nuestras redes sociales.
               </p>
             </div>
 

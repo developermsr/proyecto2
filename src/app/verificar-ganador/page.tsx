@@ -1,12 +1,39 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 
 export default function VerificarGanador() {
   const [dni, setDni] = useState('')
-  const [searchResult, setSearchResult] = useState<any>(null)
+  const [searchResult, setSearchResult] = useState<{
+      isWinner: boolean;
+      message?: string;
+      premio?: {
+        nombre: string;
+        valor: string;
+      };
+      ticket?: {
+        numero: number;
+      };
+      sorteo?: {
+        fecha: string;
+      };
+      participacion?: {
+        tickets: Array<{
+          id: string;
+          ticketNumber: number;
+          raffle: {
+            title: string;
+            prize: string;
+            isActive: boolean;
+            endDate: Date;
+          };
+        }>;
+        totalParticipantes?: number;
+      };
+    } | null>(null)
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState('')
 
@@ -204,9 +231,9 @@ export default function VerificarGanador() {
                   </div>
 
                   <div className="flex justify-center space-x-4">
-                    <a href="/rifas" className="btn-primary">
+                    <Link href="/rifas" className="btn-primary">
                       Ver Próximas Rifas
-                    </a>
+                    </Link>
                     <a href="/programa-embajadores" className="btn-secondary">
                       Programa Embajadores
                     </a>

@@ -6,7 +6,16 @@ import Footer from '@/components/layout/Footer'
 
 export default function PrizesPage() {
   const [username, setUsername] = useState('')
-  const [results, setResults] = useState<any[]>([])
+  const [results, setResults] = useState<Array<{
+    id: string;
+    raffle: {
+      title: string;
+      prize: string;
+      endDate: string;
+    };
+    ticketNumber: number;
+    claimed: boolean;
+  }>>([])
   const [isLoading, setIsLoading] = useState(false)
 
   const handleSearch = async (e: React.FormEvent) => {

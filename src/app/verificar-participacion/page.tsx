@@ -127,7 +127,12 @@ export default function VerificarParticipacion() {
                       </tr>
                     </thead>
                     <tbody>
-                      {searchResult.tickets.map((ticket: any, index: number) => (
+                      {searchResult.tickets.map((ticket: {
+          numero: number;
+          fechaCompra: string;
+          estado: string;
+          premio: string;
+        }, index: number) => (
                         <tr key={index} className="border-b border-gray-200">
                           <td className="py-2 px-4">{ticket.numero}</td>
                           <td className="py-2 px-4">{ticket.fechaCompra}</td>

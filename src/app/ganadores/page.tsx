@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Link from 'next/link'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 
@@ -170,9 +171,9 @@ export default function Ganadores() {
               <a href="/verificar-ganador" className="btn-primary">
                 Verificar si he ganado
               </a>
-              <a href="/rifas" className="btn-secondary">
+              <Link href="/rifas" className="btn-secondary">
                 Ver Rifas Activas
-              </a>
+              </Link>
             </div>
           </div>
         </div>

@@ -6,7 +6,16 @@ import Footer from '@/components/layout/Footer'
 
 export default function ValidationPage() {
   const [username, setUsername] = useState('')
-  const [results, setResults] = useState<any[]>([])
+  const [results, setResults] = useState<Array<{
+      id: string;
+      ticketNumber: number;
+      raffle: {
+        title: string;
+        description: string;
+        endDate: string;
+      };
+      isValid: boolean;
+    }>>([])
   const [isLoading, setIsLoading] = useState(false)
 
   const handleValidate = async (e: React.FormEvent) => {

@@ -41,10 +41,10 @@ export default function Ayuda() {
               </h2>
               <div className="space-y-4 text-gray-700">
                 <p>
-                  <strong>¿Cómo funciona el link de invitación?</strong> Con tu nombre de usuario se creará un link único: www.bless.com/tuusuario. Al abrir este link, aparece una barra superior con el mensaje: "Disfruta de este descuento especial del 20% por tuusuario".
+                  <strong>¿Cómo funciona el link de invitación?</strong> Con tu nombre de usuario se creará un link único: www.bless.com/tuusuario. Al abrir este link, aparece una barra superior con el mensaje: &quot;Disfruta de este descuento especial del 20% por tuusuario&quot;.
                 </p>
                 <p>
-                  <strong>¿Cómo se mantiene el referido?</strong> El nombre de usuario aparece automáticamente en la opción "Invitado por" del registro y permanece mientras el usuario navega por el sitio.
+                  <strong>¿Cómo se mantiene el referido?</strong> El nombre de usuario aparece automáticamente en la opción &quot;Invitado por&quot; del registro y permanece mientras el usuario navega por el sitio.
                 </p>
                 <p>
                   <strong>¿Qué es el código de invitación?</strong> Es un código bloqueado que se desbloquea solo cuando compras 3 rifas al mes. Puedes compartirlo directamente con amigos para que se registren.

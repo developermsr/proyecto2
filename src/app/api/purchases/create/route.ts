@@ -4,7 +4,7 @@ import { verifyToken } from '@/lib/auth'
 
 export async function POST(request: NextRequest) {
   try {
-    const { raffleId, amount, paymentMethod, phoneNumber, referenceCode } = await request.json()
+    const { raffleId, amount, paymentMethod, referenceCode } = await request.json()
 
     const token = request.headers.get('authorization')?.replace('Bearer ', '')
     if (!token) {
