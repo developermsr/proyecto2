@@ -1,0 +1,149 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  username  String   @unique
+  email     String   @unique
+  phone     String?
+  password  String
+  isActive  Boolean  @default(true)
+  isAdmin   Boolean  @default(false)
+  tickets   Int      @default(0)
+  points    Int      @default(0)
+  canRefer  Boolean  @default(false)
+  referredById String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  referredBy User?     @relation("UserReferrals", fields: [referredById], references: [id])
+  referredTo User[]   @relation("UserReferrals")
+  purchases  Purchase[]
+  redemptions Redemption[]
+  participations Participation[]
+  referralBonusesReceived ReferralBonus[] @relation("ReferralBonusesReceived")
+  winnings  Raffle[] @relation("RaffleWinner")
+  referralBonusesGiven ReferralBonus[] @relation("ReferralBonusesGiven")
+
+  @@map("users")
+}
+
+model Raffle {
+  id          String   @id @default(cuid())
+  title       String
+  description String
+  price       Float
+  maxTickets  Int
+  soldTickets Int      @default(0)
+  prize       String
+  endDate     DateTime
+  isActive    Boolean  @default(true)
+  winnerId    String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  winner       User?           @relation("RaffleWinner", fields: [winnerId], references: [id])
+  purchases    Purchase[]
+  participations Participation[]
+
+  @@map("raffles")
+}
+
+model Purchase {
+  id         String      @id @default(cuid())
+  userId     String
+  raffleId   String
+  ticketNumber Int
+  paymentMethod String
+  paymentStatus String @default("pending")
+  amount     Float
+  reference  String?
+  createdAt  DateTime    @default(now())
+  updatedAt  DateTime    @updatedAt
+
+  user        User        @relation(fields: [userId], references: [id])
+  raffle      Raffle      @relation(fields: [raffleId], references: [id])
+  participations Participation[]
+
+  @@map("purchases")
+}
+
+model Product {
+  id          String   @id @default(cuid())
+  name        String
+  description String
+  points      Int
+  stock       Int      @default(0)
+  image       String?
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  redemptions Redemption[]
+
+  @@map("products")
+}
+
+model Redemption {
+  id         String   @id @default(cuid())
+  userId     String
+  productId  String
+  quantity   Int      @default(1)
+  status     String   @default("pending")
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  user    User    @relation(fields: [userId], references: [id])
+  product Product @relation(fields: [productId], references: [id])
+
+  @@map("redemptions")
+}
+
+model Participation {
+  id         String   @id @default(cuid())
+  userId     String
+  raffleId   String
+  purchaseId String
+  ticketNumber Int
+  isWinner   Boolean  @default(false)
+  createdAt  DateTime @default(now())
+
+  user     User     @relation(fields: [userId], references: [id])
+  raffle   Raffle   @relation(fields: [raffleId], references: [id])
+  purchase Purchase @relation(fields: [purchaseId], references: [id])
+
+  @@unique([raffleId, ticketNumber])
+  @@map("participations")
+}
+
+model ReferralBonus {
+  id        String   @id @default(cuid())
+  userId    String
+  sourceId  String
+  amount    Int
+  level     Int
+  createdAt DateTime @default(now())
+
+  user   User @relation("ReferralBonusesReceived", fields: [userId], references: [id])
+  source User @relation("ReferralBonusesGiven", fields: [sourceId], references: [id])
+
+  @@map("referral_bonuses")
+}
+
+model ContactMessage {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  subject   String
+  message   String
+  status    String   @default("pending")
+  createdAt DateTime @default(now())
+
+  @@map("contact_messages")
+}

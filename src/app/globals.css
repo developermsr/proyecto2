@@ -1,8 +1,18 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Sistema de Diseño BLESS RIFAS */
+  --brand-primary: #F9E94C;
+  --bg-primary: #18181C;
+  --bg-secondary: #1B1D23;
+  --bg-cards: #1B1D23;
+  --selection-active: #7C721B;
+  --cta-primary: #4A6CF7;
+  --cta-success: #34D399;
+  --cta-danger: #E33636;
+  --text-primary: #FFFFFF;
+  --text-secondary: #000000;
+  --text-muted: #A0A0A0;
 }
 
 @theme inline {
@@ -12,15 +22,433 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Poppins', 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  min-height: 100vh;
+  font-weight: 400;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* Diseño Minimalista y Plano */
+* {
+  box-sizing: border-box;
+}
+
+/* Sin degradados ni sombras complejas */
+.no-shadow {
+  box-shadow: none !important;
+}
+
+/* Formas geométricas limpias */
+.circle {
+  border-radius: 50%;
+}
+
+.rounded-xl {
+  border-radius: 12px;
+}
+
+.rounded-2xl {
+  border-radius: 16px;
+}
+
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(255, 215, 0, 0.1);
+}
+
+.glass-dark {
+  background: rgba(255, 215, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(255, 215, 0, 0.2);
+}
+
+/* Sistema de Botones - Diseño Minimalista */
+.btn-brand {
+  background: var(--brand-primary);
+  color: var(--text-secondary);
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.btn-brand:hover {
+  background: var(--selection-active);
+  transform: translateY(-1px);
+}
+
+.btn-primary {
+  background: var(--cta-primary);
+  color: var(--text-primary);
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.btn-success {
+  background: var(--cta-success);
+  color: var(--text-primary);
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-success:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.btn-danger {
+  background: var(--cta-danger);
+  color: var(--text-primary);
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-danger:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--brand-primary);
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border: 2px solid var(--brand-primary);
+  cursor: pointer;
+}
+
+.btn-outline:hover {
+  background: var(--brand-primary);
+  color: var(--text-secondary);
+}
+
+.input-field {
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  color: var(--foreground);
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: var(--yellow);
+  box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.1);
+}
+
+/* Utilidades de Color - Sistema BLESS RIFAS */
+.text-primary {
+  color: var(--text-primary);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.text-brand {
+  color: var(--brand-primary);
+}
+
+.bg-primary {
+  background: var(--bg-primary);
+}
+
+.bg-secondary {
+  background: var(--bg-secondary);
+}
+
+.bg-cards {
+  background: var(--bg-cards);
+}
+
+.bg-brand {
+  background: var(--brand-primary);
+}
+
+.bg-selection {
+  background: var(--selection-active);
+}
+
+.border-brand {
+  border-color: var(--brand-primary);
+}
+
+/* Logo y Componentes Visuales */
+.logo-circle {
+  width: 40px;
+  height: 40px;
+  background: var(--brand-primary);
+  border-radius: 50%;
+}
+
+.premios-card {
+  background: var(--brand-primary);
+  border-radius: 12px;
+  padding: 24px;
+  color: var(--text-secondary);
+}
+
+.faq-item {
+  background: var(--brand-primary);
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 8px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.faq-item:hover {
+  background: var(--selection-active);
+}
+
+.footer-card {
+  background: var(--bg-cards);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+/* Componentes de Navegación */
+.menu-hamburguesa {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+/* Hide hamburger menu on desktop screens */
+@media (min-width: 768px) {
+  .menu-hamburguesa {
+    display: none !important;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.menu-hamburguesa span {
+  width: 100%;
+  height: 2px;
+  background: var(--brand-primary);
+  margin: 2px 0;
+  transition: all 0.2s ease;
 }
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  font-size: 18px;
+}
+
+.social-icon:hover {
+  background: var(--brand-primary);
+  color: var(--text-secondary);
+}
+
+/* Sección Principal - Diseño Minimalista */
+.brand-section {
+  background: var(--brand-primary);
+  border-radius: 24px;
+  padding: 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.brand-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px;
+  background: var(--bg-primary);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.brand-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* Banner de Referido con Animación */
+.referral-banner {
+  background: var(--brand-primary);
+  color: var(--text-secondary);
+  padding: 12px 16px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 14px;
+  animation: slideInFromLeft 0.8s ease-out;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Diseño Mobile-First - Media Queries */
+@media (max-width: 768px) {
+  .brand-section {
+    padding: 30px 20px;
+    margin: 0 16px;
+  }
+
+  .brand-circle {
+    width: 200px;
+    height: 200px;
+  }
+
+  .premios-card {
+    padding: 16px;
+    font-size: 14px;
+  }
+
+  .premios-card .flex {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .btn-brand {
+    font-size: 16px;
+    padding: 16px 32px;
+  }
+
+  h1 {
+    font-size: 2rem !important;
+    line-height: 1.2;
+  }
+
+  h2 {
+    font-size: 1.5rem !important;
+  }
+
+  h3 {
+    font-size: 1.25rem !important;
+  }
+
+  .faq-item {
+    padding: 12px;
+  }
+
+  .footer-card {
+    padding: 16px;
+  }
+
+  /* Mobile Navigation */
+  .modal-menu {
+    padding: 20px;
+  }
+}
+
+@media (min-width: 769px) {
+  .premios-card {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: 2.5rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  h3 {
+    font-size: 1.5rem !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2.25rem !important;
+  }
+
+  .brand-section {
+    padding: 60px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1200px;
+  }
+}
+
+/* Jerarquía Tipográfica */
+.text-xs { font-size: 0.75rem; }
+.text-sm { font-size: 0.875rem; }
+.text-base { font-size: 1rem; }
+.text-lg { font-size: 1.125rem; }
+.text-xl { font-size: 1.25rem; }
+.text-2xl { font-size: 1.5rem; }
+.text-3xl { font-size: 1.875rem; }
+.text-4xl { font-size: 2.25rem; }
+.text-5xl { font-size: 3rem; }
+
+.font-medium { font-weight: 500; }
+.font-semibold { font-weight: 600; }
+.font-bold { font-weight: 700; }
+.font-black { font-weight: 900; }

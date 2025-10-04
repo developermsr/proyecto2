@@ -1,7 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
-};
+  // Configure to allow external hosts
+  async rewrites() {
+    return [];
+  },
+  };
 
 export default nextConfig;
