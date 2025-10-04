@@ -4,9 +4,28 @@ import { useState } from 'react'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 
+interface SearchResult {
+  participant: {
+    nombre: string
+    dni: string
+    ciudad: string
+    email: string
+  }
+  rifa: {
+    nombre: string
+    fechaSorteo: string
+  }
+  tickets: Array<{
+    numero: number
+    fechaCompra: string
+    estado: string
+    premio: string
+  }>
+}
+
 export default function VerificarParticipacion() {
   const [dni, setDni] = useState('')
-  const [searchResult, setSearchResult] = useState<any>(null)
+  const [searchResult, setSearchResult] = useState<SearchResult | null>(null)
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState('')
 
@@ -127,12 +146,7 @@ export default function VerificarParticipacion() {
                       </tr>
                     </thead>
                     <tbody>
-                      {searchResult.tickets.map((ticket: {
-          numero: number;
-          fechaCompra: string;
-          estado: string;
-          premio: string;
-        }, index: number) => (
+                      {searchResult.tickets.map((ticket, index) => (
                         <tr key={index} className="border-b border-gray-200">
                           <td className="py-2 px-4">{ticket.numero}</td>
                           <td className="py-2 px-4">{ticket.fechaCompra}</td>

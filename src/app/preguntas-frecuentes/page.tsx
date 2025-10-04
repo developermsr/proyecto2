@@ -51,7 +51,7 @@ export default function PreguntasFrecuentes() {
               </h2>
               <p className="text-gray-600 leading-relaxed">
                 El precio de cada ticket es de S/5 y se te añadirá a la lista del sorteo.
-                El sorteo se transmitirá a través de nuestra página de Instagram "bless_peru"
+                El sorteo se transmitirá a través de nuestra página de Instagram &quot;bless_peru&quot;
                 el día 11/11/25 a las 8 PM. No es necesario estar conectado en la transmisión
                 para considerarte como ganador.
               </p>
@@ -134,7 +134,7 @@ export default function PreguntasFrecuentes() {
               </h2>
               <p className="text-gray-600 leading-relaxed">
                 Cada usuario registrado obtiene un link único de invitación (www.bless.com/tu-usuario).
-                Cuando alguien se registra a través de tu link, aparece automáticamente como "Invitado por: tu-usuario"
+                Cuando alguien se registra a través de tu link, aparece automáticamente como &quot;Invitado por: tu-usuario&quot;
                 en el formulario de registro. Además, el nuevo usuario ve un mensaje de descuento del 20%
                 en la parte superior de la web mientras navega.
               </p>

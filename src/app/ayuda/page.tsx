@@ -64,13 +64,13 @@ export default function Ayuda() {
                   <strong>¿Cuánto cuesta cada ticket?</strong> El precio de cada ticket es de S/5 y se te añadirá a la lista del sorteo.
                 </p>
                 <p>
-                  <strong>¿Cuándo es el sorteo?</strong> El sorteo se transmitirá a través de nuestra página de Instagram "bless_peru" el día 11/11/25 a las 8 PM.
+                  <strong>¿Cuándo es el sorteo?</strong> El sorteo se transmitirá a través de nuestra página de Instagram &quot;bless_peru&quot; el día 11/11/25 a las 8 PM.
                 </p>
                 <p>
                   <strong>¿Es necesario estar en la transmisión?</strong> No es necesario estar conectado en la transmisión para considerarte como ganador.
                 </p>
                 <p>
-                  <strong>¿Cómo funcionan los tickets?</strong> Cada ticket es una opción añadida a "La lista de Participantes". Si compras 3 rifas se te añadirá 3 veces a la lista. Si uno de ellos es el ganador, éste será eliminado de la lista, pero los otros dos tickets seguirán participando.
+                  <strong>¿Cómo funcionan los tickets?</strong> Cada ticket es una opción añadida a &quot;La lista de Participantes&quot;. Si compras 3 rifas se te añadirá 3 veces a la lista. Si uno de ellos es el ganador, éste será eliminado de la lista, pero los otros dos tickets seguirán participando.
                 </p>
               </div>
             </section>
@@ -87,7 +87,7 @@ export default function Ayuda() {
                   <strong>¿Qué necesito para reclamar mi premio?</strong> Es necesario llenar y firmar el documento que te enviaremos para otorgarte tu premio. Debes presentar tu DNI original.
                 </p>
                 <p>
-                  <strong>¿Dónde se publican los ganadores?</strong> La lista de Ganadores se publicará en la web en la opción "GANADORES" y en todas nuestras redes sociales.
+                  <strong>¿Dónde se publican los ganadores?</strong> La lista de Ganadores se publicará en la web en la opción &quot;GANADORES&quot; y en todas nuestras redes sociales.
                 </p>
                 <p>
                   <strong>¿Los premios son transferibles?</strong> No, los premios no son transferibles ni canjeables por efectivo.
@@ -107,10 +107,10 @@ export default function Ayuda() {
                   <strong>¿Qué pasa si no se alcanza la meta?</strong> Si no se llega a la meta, el ORGANIZADOR podrá reprogramar la rifa hasta un plazo máximo de 15 días. En caso no se reprograme, el organizador tendrá que devolver el dinero.
                 </p>
                 <p>
-                  <strong>¿Cómo valido mi participación?</strong> Completado tu registro y pago de tus tickets, espera 24 horas y luego verifica en la sección "Verificar mi Participación".
+                  <strong>¿Cómo valido mi participación?</strong> Completado tu registro y pago de tus tickets, espera 24 horas y luego verifica en la sección &quot;Verificar mi Participación&quot;.
                 </p>
                 <p>
-                  <strong>¿Cómo sé si gané?</strong> Puedes verificar si eres ganador en la sección "Verificar si he ganado" ingresando tu DNI.
+                  <strong>¿Cómo sé si gané?</strong> Puedes verificar si eres ganador en la sección &quot;Verificar si he ganado&quot; ingresando tu DNI.
                 </p>
               </div>
             </section>

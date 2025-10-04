@@ -141,7 +141,7 @@ export default function Ganadores() {
                 <li>• Los ganadores son contactados por correo electrónico y teléfono dentro de las 72 horas siguientes al sorteo</li>
                 <li>• Para reclamar el premio, es necesario presentar DNI original y firmar el documento de recepción</li>
                 <li>• Los premios no son transferibles ni canjeables por efectivo</li>
-                <li>• La lista completa de participantes puede ser consultada en la sección "Verificar mi Participación"</li>
+                <li>• La lista completa de participantes puede ser consultada en la sección &quot;Verificar mi Participación&quot;</li>
                 <li>• Si un ganador no reclama su premio dentro de 7 días, se realizará un nuevo sorteo</li>
               </ul>
             </div>

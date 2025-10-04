@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useEffect, useCallback } from 'react'
-import { useRouter } from 'next/navigation'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 import PaymentForm from '@/components/payment/PaymentForm'
@@ -43,7 +42,6 @@ interface User {
 
 export default function RaffleDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = React.use(params)
-  const router = useRouter()
   const [raffle, setRaffle] = useState<Raffle | null>(null)
   const [user, setUser] = useState<User | null>(null)
   const [isLoading, setIsLoading] = useState(true)
