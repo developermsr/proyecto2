@@ -91,7 +91,7 @@ export async function POST(request: NextRequest) {
     }
 
     const winningParticipations = participations.filter(p =>
-      p.isWinner || p.raffle.winnerId === p.userId
+      p.isWinner
     )
 
     if (winningParticipations.length > 0) {
