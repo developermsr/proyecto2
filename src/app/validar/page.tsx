@@ -13,8 +13,12 @@ export default function ValidationPage() {
         title: string;
         description: string;
         endDate: string;
+        prize?: string;
+        isActive?: boolean;
       };
       isValid: boolean;
+      isWinner?: boolean;
+      createdAt?: string;
     }>>([])
   const [isLoading, setIsLoading] = useState(false)
 
